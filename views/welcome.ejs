@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<title>Dashboard|Password Manager</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style_common.css">
+<link rel="stylesheet" href="css/welcome.css">
+<script type="text/javascript" src="javascript/js_common.js"></script> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="light-grey">
+<%- include('partials/header.ejs') %>
+
+<!-- Top container -->
+
+<!-- Sidebar/menu -->
+<%- include('partials/sidebar.ejs') %>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+
+<!-- !PAGE CONTENT! -->
+<div class="main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="container" style="padding-top:22px">
+    <h3><b><i class="fa fa-users fa-fw"></i> My Dashboard</b></h5>
+  </header>
+
+  <div class="row-padding margin-bottom">
+    <div class="quarter">
+      <div class="container red padding-16">
+        <div class="left"><i class="fa fa-reddit-alien xxxlarge"></i></div>
+        <div class="right">
+          <h3><%= userobj.numberOfVisits %></h3>
+        </div>
+        <div class="clear"></div>
+        <h4>Visits</h4>
+      </div>
+    </div>
+    <div class="quarter">
+      <div class="container blue padding-16">
+        <div class="left"><i class="fa fa-key xxxlarge"></i></div>
+        <div class="right">
+          <h3><%= userobj.addpassword.length %></h3>
+        </div>
+        <div class="clear"></div>
+        <h4>Active Passwords</h4>
+      </div>
+    </div>
+    <div class="quarter">
+      <div class="container teal padding-16">
+        <div class="left"><i class="fa fa-database xxxlarge"></i></div>
+        <div class="right">
+          <h3><%= count %></h3>
+        </div>
+        <div class="clear"></div>
+        <h4>Accounts</h4>
+      </div>
+    </div>
+    <div class="quarter">
+      <div class="container orange text-white padding-16">
+        <div class="left"><i class="fa fa-calculator xxxlarge"></i></div>
+        <div class="right">
+          <h3><%= userobj.total_strength %></h3>
+        </div>
+        <div class="clear"></div>
+        <h4>Security Socre</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="row-padding" style="margin:0 -16px">
+      <div class="twothird">
+        <h5>Your Recent activity</h5>
+        <table class="table striped white">
+          <% if (userobj.history.length > 0) { %>
+            <% userobj.history.reverse().slice(0,10).forEach(his => { %>
+              <tr>
+                <td><i class="fa fa-user text-blue large"></i></td>
+                <td><%= his.event%></td>
+                <td><i><%= moment(his.time).format("DD MMMM, YYYY")%><br> <strong>Time</strong> <%= moment(his.time).format("HH:mm:ss")%></i></td>
+              </tr>
+                
+            <% }) %>
+          <% } else { %>
+            <p>Sorry no History Recorded...</p>
+          <% } %>
+        </table>
+      </div>
+    </div>
+  </div>
+  <%- include('partials/footer.ejs') %>
+  
+  <!-- Footer -->
+  <footer class="container padding-16 light-grey">
+    
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script type="text/javascript" src="javascript/welcome.js"></script>
+
+</body>
+</html>

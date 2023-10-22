@@ -1,0 +1,33 @@
+<div class="bar top black large" style="z-index:4" >
+  <button class="bar-item button hide-large hover-none hover-text-light-grey" onclick="sidebar();"><i class="fa fa-bars"></i>Menu</button>
+  <div class="bar-item right">
+    <div class="header-items">
+      <i style="display: inline-block;" class="fa fa-user"></i>&nbsp;
+      <!-- <h6 style="display: inline-block;">< </h6>&nbsp; -->
+     <button id="arrow-btn" style="display: inline-block; color:white" onclick="showItems()"><%= userobj.email %>&nbsp;<i class="arrow down"></i></button>&nbsp;
+    </div>
+ 
+  </div>
+  </div>
+  <div class="less-sticky" id="ls" style="display: none; z-index:4" >
+    <ul>
+      <div class="email-item">
+        <i style="display: inline-block;" class="fa fa-user"></i>
+        <a href="/userprofile" style="color: black;"><h6 style="display: inline-block;"> Account</h6></a> 
+      </div>
+      <div class="email-item">
+        <i style="display: inline-block;" class="fa fa-sign-out"></i>
+        <a href="/logout" style="color: black;"><h6 style="display: inline-block;"> Logout</h6></a> 
+      </div>
+      <div class="email-item"> 
+        <i style="display: inline-block;" class="fa fa-gear"></i>
+        <a href="/settings" style="color: black;"><h6 style="display: inline-block;"> Settings</h6></a> 
+      </div>
+
+      
+    </ul>
+    </div>
+</div>
+
+
+  

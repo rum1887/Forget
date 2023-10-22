@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Settings</title>
+        <script type="text/javascript" src="javascript/js_common.js"></script> 
+        <link rel="stylesheet" href="css/style_common.css">
+        <link rel="stylesheet" href="css/settings.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        
+      </head>
+<body>
+   <%- include('partials/header.ejs') %>
+   <%- include('partials/sidebar.ejs') %>
+   <div class="main" style="margin-left:300px;margin-top:43px;">
+       <header class="container" style="padding-top:22px">
+           <h3><b><i class="fa fa-cog fa-fw"></i> Settings</b></h5>
+         </header>
+         <div class="cont">
+            
+            <div id="prompt-form-container">
+               <form id="prompt-form">
+               <div id="prompt-message"></div>
+               <input id="prompt_input" type="password" name = "text">
+               <input type="submit" value="Ok">
+               <input type="button" name="cancel" value="Cancel">
+               </form>
+         </div>
+                <div ><p class="details-head"> Forgot password</p></div>
+                <a href="/forgotpassword"> Reset Password through email verification</a><br>
+               <div ><p class="details-head">User details</p></div>
+                <div class="details-body">
+                  <div class="details-item" style="margin: 2%;">
+                     <h5 style="display: inline;">Username:</h5> &nbsp; &nbsp;
+                     <h5 style="display: inline;"><%= userobj.username %></h5>&nbsp;&nbsp;
+                     <button id="button-username" class="change-buttons" onclick="change(this.id)" class="user-button" style="display: inline;float:right " disabled>Change</button>
+                  </div>
+                  <div class="details-item" style="margin: 2%;">
+                    <h5 style="display: inline;">Email:</h5>&nbsp;&nbsp;
+                    <h5 style="display: inline;"><%= userobj.email %></h5>&nbsp;&nbsp;
+                    <button id="button-email" class="change-buttons" onclick="change(this.id)" class="user-button" style="display: inline;float:right" disabled>Change</button>
+                 </div>
+                 <div class="details-item" style="margin: 2%;">
+                    <h5 style="display: inline;">phone Number:</h5>&nbsp;&nbsp;
+                    <h5 style="display: inline;"><%= userobj.mobile %></h5>&nbsp;&nbsp;
+                    <button id="button-number" class="change-buttons" onclick="change(this.id)" class="user-button" style="display: inline;float:right" disabled>Change</button>
+                 </div>
+           
+               </div>
+
+                <div id="error" style="color: blue;">click lock details to apply the changes</div>
+               <button id="change-details"  onclick="showform()">Change details</button>
+               <button id="confirm"  >Lock Details</button>
+       
+       </div><br>
+       
+   
+   </div>
+</body>
+<script type="text/javascript" src="javascript/settings.js"></script> 
+
+</html>

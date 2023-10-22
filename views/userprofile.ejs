@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Access Password</title>
+        <link rel="stylesheet" href="css/settings.css">
+        <link rel="stylesheet" href="css/style_common.css">
+        <script type="text/javascript" src="javascript/js_common.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        
+      </head>
+<body>
+<%- include('partials/header.ejs') %>
+<%- include('partials/sidebar.ejs') %>
+<div class="main" style="margin-left:300px;margin-top:43px;">
+    <header class="container" style="padding-top:1px">
+        <h3><b><i class="fa fa-user fa-fw"></i> Your Profile</b></h5>
+      </header>
+<div class="cont">
+   <div ><p class="details-head">Account Info</p></div>
+    <div class="details-body">
+      <div class="details-item" style="margin: 2%;">
+         <h5 style="display: inline;">Username:</h5> &nbsp; &nbsp;
+         <h5 style="display: inline;"><%= userobj.username %></h5>&nbsp;&nbsp;
+      </div>
+      <div class="details-item" style="margin: 2%;">
+        <h5 style="display: inline;">Email:</h5>&nbsp;&nbsp;
+        <h5 style="display: inline;"><%= userobj.email %></h5>&nbsp;&nbsp;
+     </div>
+     <div class="details-item" style="margin: 2%;">
+        <h5 style="display: inline;">phone Number:</h5>&nbsp;&nbsp;
+        <h5 style="display: inline;"><%= userobj.mobile %></h5>&nbsp;&nbsp;
+     </div>
+     <div class="details-item" style="margin: 2%;">
+        <h5 style="display: inline;">Number of Active Passwords:</h5>&nbsp;&nbsp;
+        <h5 style="display: inline;"><%= userobj.addpassword.length %></h5>&nbsp;&nbsp;
+     </div>
+
+   </div>
+</div>
+</div>
+</body>
+
+</html>
